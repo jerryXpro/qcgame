@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品檢狂潮 (Inspector Frenzy)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui-bar">
+            <div id="score-container">分數: <span id="score">0</span></div>
+            <div id="timer-container">時間: <span id="timer">90</span>s</div>
+            <div id="combo-container">連擊: <span id="combo">0</span>x</div>
+        </div>
+        <div id="game-area">
+            <!-- Multiple conveyor belts will be dynamically added here -->
+            <div id="bonus-time-indicator" style="display: none;">BONUS TIME!</div>
+            <div id="speed-up-indicator" style="display: none;">SPEED UP!</div>
+        </div>
+
+        <div id="start-screen" class="overlay">
+            <h1>品檢狂潮</h1>
+            <p>在限定秒數內找出所有瑕疵品！</p>
+            <div class="selection-group">
+                <label>選擇生產線:</label>
+                <input type="checkbox" id="line-plastic-cup" value="plastic-cup" checked>
+                <label for="line-plastic-cup">塑膠杯生產線</label>
+                <input type="checkbox" id="line-paper-cup" value="paper-cup">
+                <label for="line-paper-cup">紙杯生產線</label>
+                <input type="checkbox" id="line-glassware" value="glassware">
+                <label for="line-glassware">玻璃杯生產線</label>
+            </div>
+            <div class="selection-group">
+                <label for="game-duration">遊戲時間 (秒):</label><br>
+                <input type="number" id="game-duration" value="30" min="10" max="300">
+            </div>
+            <button id="start-button">開始遊戲</button>
+        </div>
+
+        <div id="end-screen" class="overlay" style="display: none;">
+            <h2>時間到！</h2>
+            <p>最終分數: <span id="final-score">0</span></p>
+            <button id="restart-button">再玩一次</button>
+            <button id="end-game-button">結束遊戲</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
